@@ -17,7 +17,6 @@ function init() {
   const ambientIntensity = 1;
   const directionalIntensity = 0.1;
   const fogColor = 'white';
-  const { hole, plane } = stencilExample();
   const gui = new GUI();
 
   const backgroundTexture = new THREE.TextureLoader().load(backgroundScene);
@@ -25,7 +24,7 @@ function init() {
     50,
     window.innerWidth / window.innerHeight,
     0.01,
-    1000,
+    1000
   );
 
   camera.position.z = 7;
