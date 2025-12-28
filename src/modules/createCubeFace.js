@@ -33,12 +33,6 @@ function createCubeFace(sideN, params, faceTexture) {
     stencilRef: sideN,
     stencilZPass: THREE.ReplaceStencilOp,
   });
-  // new THREE.materialName({
-  //   stencilWrite: true,
-  //   stencilFunc: THREE.nameStencilFunc,
-  //   stencilRef: sideN,
-  //   stencilPassFunc: THREE.passReaction
-  // });
 
   const plane = new THREE.Mesh(
     new THREE.PlaneGeometry(params.size, params.size),
