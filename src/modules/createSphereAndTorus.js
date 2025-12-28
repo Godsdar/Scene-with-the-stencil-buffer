@@ -1,8 +1,8 @@
 import * as THREE from 'three';
-import createTorus from "./createTorus";
-import texture from "/cube texture.jpg";
+import createTorus from './createTorus';
+import texture from '/cube texture.jpg';
 
-export default function createSphereAndTorus (params) {
+export default function createSphereAndTorus(params) {
   const torusTexture = new THREE.TextureLoader().load(texture);
   torusTexture.colorSpace = THREE.SRGBColorSpace;
   const torus = createTorus(params.radius, torusTexture);
@@ -13,7 +13,7 @@ export default function createSphereAndTorus (params) {
     side: THREE.DoubleSide,
     transparent: true,
     alphaTest: 0.5,
-    opacity: .5,
+    opacity: 0.5,
   });
   const sphere = new THREE.Mesh(sphereGeometry, sphereMaterial);
   sphere.castShadow = true;
@@ -23,6 +23,6 @@ export default function createSphereAndTorus (params) {
   torus.rotation.x += Math.PI / 2;
   return {
     torus: torus,
-    sphere: sphere
+    sphere: sphere,
   };
-};
+}

@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 
-export default function stencilExample () {
-  const holeGeometry = new THREE.CircleGeometry(.4, 360, 0, Math.PI * 2);
+export default function stencilExample() {
+  const holeGeometry = new THREE.CircleGeometry(0.4, 360, 0, Math.PI * 2);
   const planeGeometry = new THREE.PlaneGeometry(1, 1);
 
   const holeMaterial = new THREE.MeshBasicMaterial({
@@ -27,6 +27,6 @@ export default function stencilExample () {
 
   return {
     hole: hole,
-    plane: plane
+    plane: plane,
   };
-};
+}

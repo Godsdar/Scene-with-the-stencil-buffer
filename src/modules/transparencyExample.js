@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 
-export default function transparencyExample () {
-  const sphereGeo = new THREE.SphereGeometry(.4);
+export default function transparencyExample() {
+  const sphereGeo = new THREE.SphereGeometry(0.4);
   const sphereMat = new THREE.MeshPhongMaterial({
     color: 'blue',
   });
@@ -17,4 +17,4 @@ export default function transparencyExample () {
   });
   const cone = new THREE.Mesh(coneGeo, coneMat);
   return { cone: cone, sphere: sphere };
-};
+}

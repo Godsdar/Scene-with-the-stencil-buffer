@@ -1,12 +1,17 @@
 import * as THREE from 'three';
 
-function createCubeFace (sideN, params, faceTexture) {
+function createCubeFace(sideN, params, faceTexture) {
   const pos = new THREE.Vector3();
   const rot = new THREE.Vector3();
-  const posShift = params.size * .5;
+  const posShift = params.size * 0.5;
   const rotShift = Math.PI / 2;
 
-  const holeGeometry = new THREE.CircleGeometry(params.size * .4, 360, 0, Math.PI * 2);
+  const holeGeometry = new THREE.CircleGeometry(
+    params.size * 0.4,
+    360,
+    0,
+    Math.PI * 2,
+  );
 
   const holeMaterial = new THREE.MeshBasicMaterial({
     side: THREE.DoubleSide,
@@ -35,7 +40,10 @@ function createCubeFace (sideN, params, faceTexture) {
   //   stencilPassFunc: THREE.passReaction
   // });
 
-  const plane = new THREE.Mesh(new THREE.PlaneGeometry(params.size, params.size), planeMaterial);
+  const plane = new THREE.Mesh(
+    new THREE.PlaneGeometry(params.size, params.size),
+    planeMaterial,
+  );
   const hole = new THREE.Mesh(holeGeometry, holeMaterial);
   const face = new THREE.Group();
 

@@ -1,8 +1,8 @@
-import * as THREE from "three";
-import createCubeFace from "./createCubeFace";
-import faceTexture from "/cube texture.jpg";
+import * as THREE from 'three';
+import createCubeFace from './createCubeFace';
+import faceTexture from '/cube texture.jpg';
 
-export default function createCube (params) {
+export default function createCube(params) {
   const cube = new THREE.Group();
   const texture = new THREE.TextureLoader().load(faceTexture);
   texture.colorSpace = THREE.SRGBColorSpace;

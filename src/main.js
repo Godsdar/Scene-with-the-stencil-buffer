@@ -1,22 +1,22 @@
-import * as THREE from "three";
-import { OrbitControls } from "three/examples/jsm/Addons.js";
-import createObjects from "./modules/createObjects";
-import setLights from "./modules/setLights";
-import backgroundScene from "/forestishBackground.jpg";
-import { GUI } from "dat.gui";
-import addGui from "./modules/addGui";
+import * as THREE from 'three';
+import { OrbitControls } from 'three/examples/jsm/Addons.js';
+import createObjects from './modules/createObjects';
+import setLights from './modules/setLights';
+import backgroundScene from '/forestishBackground.jpg';
+import { GUI } from 'dat.gui';
+import addGui from './modules/addGui';
 
 let camera, scene, renderer, controls;
 const rotate = { isRotate: false };
 const speed = { n: 1 };
 const clock = new THREE.Clock();
 
-function init () {
-  const ambientColor = "white";
-  const directionalColor = "red";
+function init() {
+  const ambientColor = 'white';
+  const directionalColor = 'red';
   const ambientIntensity = 1;
   const directionalIntensity = 0.1;
-  const fogColor = "white";
+  const fogColor = 'white';
   const { hole, plane } = stencilExample();
   const gui = new GUI();
 
@@ -25,7 +25,7 @@ function init () {
     50,
     window.innerWidth / window.innerHeight,
     0.01,
-    1000
+    1000,
   );
 
   camera.position.z = 7;
@@ -64,7 +64,7 @@ function init () {
   document.body.appendChild(renderer.domElement);
 }
 
-function animate () {
+function animate() {
   const delta = clock.getDelta();
   rotate.isRotate && (scene.rotation.y -= speed.n * delta);
   renderer.clear(true, true, true);

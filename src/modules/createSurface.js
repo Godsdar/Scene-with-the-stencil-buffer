@@ -1,19 +1,19 @@
 import * as THREE from 'three';
 import surfaceTexture from '/walnut-wood-textured-background-design.jpg';
 
-export default function createSurface ({ width, height, depth }) {
+export default function createSurface({ width, height, depth }) {
   const loader = new THREE.TextureLoader();
   const texture = loader.load(surfaceTexture);
-  
+
   texture.wrapS = THREE.RepeatWrapping;
   texture.wrapT = THREE.RepeatWrapping;
-  texture.magFilter = THREE.NearestFilter
+  texture.magFilter = THREE.NearestFilter;
   texture.colorSpace = THREE.SRGBColorSpace;
 
   const geometry = new THREE.BoxGeometry(width, height, depth);
   const material = new THREE.MeshPhongMaterial({
     map: texture,
-    side: THREE.DoubleSide
+    side: THREE.DoubleSide,
   });
   const surface = new THREE.Mesh(geometry, material);
   surface.position.set(0, -2, 0);
@@ -21,4 +21,4 @@ export default function createSurface ({ width, height, depth }) {
   surface.receiveShadow = true;
 
   return surface;
-};
+}
