@@ -2,19 +2,18 @@ import * as THREE from 'three';
 import createTorus from "./createTorus";
 import texture from "/cube texture.jpg";
 
-export default function createSphereAndTorus (sphereSize = 1) {
+export default function createSphereAndTorus (params) {
   const torusTexture = new THREE.TextureLoader().load(texture);
   torusTexture.colorSpace = THREE.SRGBColorSpace;
-  const torus = createTorus(sphereSize, torusTexture);
-  const sphereGeometry = new THREE.SphereGeometry(sphereSize, 100, 100);
+  const torus = createTorus(params.radius, torusTexture);
+  const sphereGeometry = new THREE.SphereGeometry(params.radius, 100, 100);
   const sphereMaterial = new THREE.MeshPhongMaterial({
-    emissive: '#0a1d38',
-    emissiveIntensity: 10,
-    fog: true,
+    color: '#ccc',
     depthWrite: true,
-    opacity: 0.5,
-    alphaTest: 0.1,
+    side: THREE.DoubleSide,
     transparent: true,
+    alphaTest: 0.5,
+    opacity: .5,
   });
   const sphere = new THREE.Mesh(sphereGeometry, sphereMaterial);
   sphere.castShadow = true;

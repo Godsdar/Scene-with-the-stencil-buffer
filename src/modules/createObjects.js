@@ -2,10 +2,10 @@ import createSurface from "./createSurface";
 import createSphereAndTorus from "./createSphereAndTorus";
 import createCube from "./createCube";
 
-export default function createObjects ({surfaceSize, sphereSize, cubeSize}) {
-  const surface = createSurface(surfaceSize);
-  const { torus, sphere } = createSphereAndTorus(sphereSize);
-  const cube = createCube(cubeSize);
+export default function createObjects ({ surfaceParams, sphereParams, cubeParams }) {
+  const surface = createSurface(surfaceParams);
+  const { torus, sphere } = createSphereAndTorus(sphereParams);
+  const cube = createCube(cubeParams);
   return {
     surface: surface,
     torus: torus,

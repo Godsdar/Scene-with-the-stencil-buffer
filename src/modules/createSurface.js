@@ -1,8 +1,7 @@
 import * as THREE from 'three';
 import surfaceTexture from '/walnut-wood-textured-background-design.jpg';
 
-export default function createSurface (size = 10) {
-  console.log("size: " + typeof size);
+export default function createSurface ({ width, height, depth }) {
   const loader = new THREE.TextureLoader();
   const texture = loader.load(surfaceTexture);
   
@@ -11,7 +10,7 @@ export default function createSurface (size = 10) {
   texture.magFilter = THREE.NearestFilter
   texture.colorSpace = THREE.SRGBColorSpace;
 
-  const geometry = new THREE.BoxGeometry(size, size, 1);
+  const geometry = new THREE.BoxGeometry(width, height, depth);
   const material = new THREE.MeshPhongMaterial({
     map: texture,
     side: THREE.DoubleSide
