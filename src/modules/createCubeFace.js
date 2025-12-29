@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 
 // Функция для создания грани куба
-function createCubeFace(sideN, params, faceTexture) {
+export default function createCubeFace(sideN, params, faceTexture) {
   const pos = new THREE.Vector3(); // вектор позиции грани
   const rot = new THREE.Vector3(); // вектор вращения грани
   const posShift = params.size * 0.5; // сдвиг вектора позиции
@@ -87,5 +87,3 @@ function createCubeFace(sideN, params, faceTexture) {
 
   return face;
 }
-
-export default createCubeFace;
