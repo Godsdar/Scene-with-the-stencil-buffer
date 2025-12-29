@@ -15,6 +15,7 @@ const speed = { n: 1 };
 // создаем таймер
 const clock = new THREE.Clock();
 
+// функция инициализации сцены
 function init () {
   const ambientColor = 'white';
   const directionalColor = 'white';
@@ -76,6 +77,7 @@ function init () {
   document.body.appendChild(renderer.domElement);
 }
 
+// функция анимации вращения сцены
 function animate () {
   // время, прошедшее с момента предыдущего обновления сцены
   const delta = clock.getDelta();
