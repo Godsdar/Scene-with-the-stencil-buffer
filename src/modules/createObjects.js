@@ -2,6 +2,7 @@ import createSurface from './createSurface';
 import createSphereAndTorus from './createSphereAndTorus';
 import createCube from './createCube';
 
+// Функция для создания всех объектов сцены (вызывается в main.js)
 export default function createObjects({
   surfaceParams,
   sphereParams,

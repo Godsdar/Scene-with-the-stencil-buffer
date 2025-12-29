@@ -1,5 +1,6 @@
 import * as THREE from 'three';
 
+// Функция для создания тора с наложенной на него текстурой
 export default function createTorus(sphereSize, texture) {
   return new THREE.Mesh(
     new THREE.TorusGeometry(
