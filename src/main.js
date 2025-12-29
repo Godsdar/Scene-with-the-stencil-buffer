@@ -35,7 +35,7 @@ function init () {
 
   camera.position.z = 7; // отодвигаем камеру от начала координат
   scene = new THREE.Scene(); // создаем сцену
-  scene.background = backgroundTexture;
+  scene.background = backgroundTexture; // накладываем текстуру на задний фон
   // создаем рендерер
   renderer = new THREE.WebGLRenderer({ stencil: true, antialias: true });
   renderer.setSize(window.innerWidth, window.innerHeight);
