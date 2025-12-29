@@ -25,6 +25,7 @@ function init () {
 
   // создаем текстуру
   const backgroundTexture = new THREE.TextureLoader().load(backgroundScene);
+  // устанавливаем камеру
   camera = new THREE.PerspectiveCamera(
     50,
     window.innerWidth / window.innerHeight,
